@@ -531,8 +531,3 @@ for (let i = 0; i < 3; i++) {
 
 //------------------------------------------------------------------------------------------------
 // WHILE LOOP
-sddasdsadsadasdsa
-sdfasfdas
-sddasdsadsadasdsa
-aici mai adaug
-sds
