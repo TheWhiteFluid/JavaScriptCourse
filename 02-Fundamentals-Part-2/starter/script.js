@@ -528,13 +528,31 @@ for (let i = 0; i < 3; i++) {
     console.log(`Repetition number ${p}`);          // loop insinde of a loop
   }
 }
-//
 
-------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 // WHILE LOOP
 
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep}`);
 }
 
+let rep = 1
+while (rep <= 10) {
+  console.log(`WHILE: Lifting weights repetition ${rep}`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`Waiting for a 6. Actual dice face number is ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+
+  if (dice === 6) {
+    console.log('You have hit a 6. Congratulations! Loop is about to end.')
+  }
+}
+
+//Coding challenge 4
 
