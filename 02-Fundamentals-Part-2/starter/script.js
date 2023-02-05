@@ -528,7 +528,13 @@ for (let i = 0; i < 3; i++) {
     console.log(`Repetition number ${p}`);          // loop insinde of a loop
   }
 }
+//
 
-//------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 // WHILE LOOP
-sdasdasdasdsadas
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}`);
+}
+
+
