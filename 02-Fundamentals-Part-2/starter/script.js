@@ -556,3 +556,36 @@ while (dice !== 6) {
 
 //Coding challenge 4
 
+const bills4 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+let tips4 = [];
+let total4 = []; //bill+tip
+
+const calcTip4 = function (bill) {
+  if (bill >= 50 && bill <= 300) {
+    return 15 / 100 * bill;
+  } else {
+    return 20 / 100 * bill;
+  }
+}
+
+for (let i = 0; i <= bills4.length - 1; i++) {
+  const tip = calcTip4(bills4[i]);
+  tips4.push(tip);
+  total4.push(tip + bills4[i]);
+}
+console.log(tips4);
+console.log(total4);
+
+
+
+const calcAverage4 = function (arr) {
+  let sum = 0;
+  for (let i = 0; i <= arr.length - 1; i++) {
+    sum = sum + arr[i]; // sum += arr[i];
+  }
+
+  return sum / arr.length;
+}
+
+console.log(calcAverage4(total4));
