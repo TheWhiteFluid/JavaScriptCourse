@@ -38,3 +38,40 @@ const calcAmplitute = function (arr1, arr2) {
 };
 
 console.log(calcAmplitute(temperatures1, temperatures2));
+
+//----------------------------------------------------------------------------
+//DEBUGGING
+
+const measureKelvin = function () {
+  const measurement = {
+    type: 'temp',
+    unit: 'Celsius',
+    //C) FIX
+    //value: prompt('Degrees to celsius: '),
+    value: Number(prompt('Degrees to celsius')), //converting string value --> number
+  };
+  // B)FIND
+  console.table(measurement); //finding the actual output object values type
+  //console.log(measurement.value);
+  //console.warn(measurement.value);
+  //console.error(measurement.value);
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+// A) IDENTIFY
+console.log(measureKelvin()); //not adding properly (concatenate than add)
+
+//Coding challenge #1
+
+const testdata1 = [17, 21, 23];
+
+const printForecast = function (arr) {
+  let forecastStr = ` `;
+  for (let i = 0; i <= arr.length - 1; i++) {
+    forecastStr = forecastStr + `...${arr[i]}C in ${i + 1} days`;
+  }
+  console.log(forecastStr);
+};
+
+printForecast(testdata1);
