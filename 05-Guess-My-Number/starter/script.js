@@ -25,6 +25,12 @@ document.querySelector('.guess').value = 23;
 /* <button class="btn check">Check!</button> */
 /* <input type="number" class="guess" /> */ //type-number --> value
 
+// generatingthe random secret number that have to be guessed
+
+const secretNumber = Math.trunc(Math.random() * 20 + 1);
+
+document.querySelector('.number').textContent = secretNumber;
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
@@ -32,6 +38,14 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     //guess default value in console is 0 (falsy value)
     document.querySelector('.message').textContent = 'No number !';
+  } else if (guess === secretNumber) {
+    document.querySelector('.message').textContent = 'Correct Number !';
+  } else if (guess > secretNumber) {
+    document.querySelector('.message').textContent = 'Too high !';
+  } else if (guess < secretNumber) {
+    document.querySelector('.message').textContent = 'Too low !';
+  } else {
+    document.querySelector('.message').textContent = 'Try again :(';
   }
 });
 
