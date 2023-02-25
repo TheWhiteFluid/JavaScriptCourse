@@ -5,20 +5,6 @@
 /* <section class="right">
         <p class="message">Start guessing...</p> */
 
-console.log(document.querySelector('.message').textContent);
-
-document.querySelector('.message').textContent = 'Correct Number !';
-
-console.log(document.querySelector('.message').textContent);
-
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 10;
-
-/* <input type="number" class="guess" /> */
-console.log(document.querySelector('.guess').value); // the box is an empty value
-
-document.querySelector('.guess').value = 23;
-
 //---------------------------------------------------------------------
 // HANDLING CLICK EVENTS
 
@@ -26,13 +12,10 @@ document.querySelector('.guess').value = 23;
 /* <input type="number" class="guess" /> */ //type-number --> value
 
 // generatingthe random secret number that have to be guessed
-
-const secretNumber = Math.trunc(Math.random() * 20 + 1);
-
+let secretNumber = Math.trunc(Math.random() * 20 + 1);
 let score = document.querySelector('.score').textContent;
 
-document.querySelector('.number').textContent = secretNumber;
-
+//CHECK BUTTON EVENT CLICK
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
@@ -45,6 +28,7 @@ document.querySelector('.check').addEventListener('click', function () {
     // When player wins
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'Correct Number !';
+    document.querySelector('.number').textContent = secretNumber;
     //changing backgroud color
     document.querySelector('body').style.backgroundColor = '#33cc33';
     //changing number width
@@ -74,5 +58,17 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
+//AGAIN! BUTTON EVENT CLICK
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20 + 1);
+
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.guess').value = ' ';
+  document.querySelector('.number').textContent = '?';
+
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
 //---------------------------------------------------------------------
 // IMPLEMENTING THE GAME LOGIC ( up up )
