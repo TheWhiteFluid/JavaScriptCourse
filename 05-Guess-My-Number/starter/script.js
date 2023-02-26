@@ -13,7 +13,8 @@
 
 // generatingthe random secret number that have to be guessed
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
-let score = document.querySelector('.score').textContent;
+let score = 20;
+let highScore = 0;
 
 //CHECK BUTTON EVENT CLICK
 document.querySelector('.check').addEventListener('click', function () {
@@ -33,6 +34,11 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#33cc33';
     //changing number width
     document.querySelector('.number').style.width = '30rem';
+
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = score;
+    }
 
     // When guess is too high
   } else if (guess > secretNumber) {
@@ -65,10 +71,11 @@ document.querySelector('.again').addEventListener('click', function () {
 
   document.querySelector('.score').textContent = score;
   document.querySelector('.message').textContent = 'Start guessing...';
-  document.querySelector('.guess').value = ' ';
+  document.querySelector('.guess').value = '';
   document.querySelector('.number').textContent = '?';
 
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
+});
 //---------------------------------------------------------------------
-// IMPLEMENTING THE GAME LOGIC ( up up )
+// IMPLEMENTING THE GAME LOGIC (UP UP)
