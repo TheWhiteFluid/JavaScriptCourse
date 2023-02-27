@@ -26,3 +26,12 @@ for (let i = 0; i <= btnsOpenModal.length - 1; i++) {
 
 // general closing modals
 btnCloseModal.addEventListener('click', closeModal);
+
+// adding exit event when ESC is pressed
+document.addEventListener('keydown', function (e) {
+  console.log(e);
+
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
