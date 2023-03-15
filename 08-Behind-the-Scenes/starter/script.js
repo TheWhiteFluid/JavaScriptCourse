@@ -155,3 +155,41 @@ console.log(me); //{'Jonas', 27}
    friend ---> 0003    D30F  -->  D30F   {name:'Jonas', age: 30}
    friend.age -> 0003  D30F  -->  D30F   {name:'Jonas', age: 27} */
 // CALL STACK                           // HEAP
+
+let lastName = 'Williams';
+let oldLastName = lastName;
+
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+const marriedJessica = jessica;
+
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage:', jessica);
+console.log('After marriage:', marriedJessica);
+
+//COPYING OBJECTS
+//to copy a new object is better to create another one (another refference)
+// one method is Object.assign (working on the first level)
+// for a deep cloning ( also cloning the arrays/objects inside of the object we need to usa a library :) )
+
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+
+jessicaCopy.family.push('Mary', 'John');
+
+console.log('Before marriage:', jessica2);
+console.log('After marriage:', jessicaCopy);
