@@ -38,6 +38,7 @@ function calcAge(birthYear) {
 
 calcAge(1994);
 
+//-----------------------------------------------------------------------------
 //THIS keyword
 console.log(this);
 
@@ -103,6 +104,7 @@ jonas2.greet2();
 
 jonas2.calcAge();
 
+//--------------------------------------------------------------------
 // arguments keyword
 const addExpr = function (a, b) {
   console.log(arguments);
@@ -119,6 +121,7 @@ const addArrow = (a, b) => {
 
 //addArrow(2, 5, 8, 10);
 
+//-----------------------------------------------------------------------
 // Primitives vs Objects
 
 //Primitive values are stored in the CALL STACK:
