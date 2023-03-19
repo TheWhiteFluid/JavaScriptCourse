@@ -27,6 +27,12 @@ const restaurant = {
     );
   },
 
+  recipe: function (ingr1, ingr2, ingr3) {
+    console.log(
+      `Here is your delicious pasta with the ingredients: ${ingr1}, ${ingr2},${ingr3}`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -86,7 +92,7 @@ const [p, l, m = 1] = [7, 8];
 console.log(p, l, m);
 
 //-----------------------------------------------------------------
-//DESTRUCTURING OBJECTS --> { } destructuring objects sing :)
+//DESTRUCTURING OBJECTS --> { } destructuring objects sign :)
 // You have to specify in the {} the exact name of object properties that you wanna destruct
 
 const { name, openingHours, categories } = restaurant;
@@ -118,3 +124,52 @@ const { sat } = restaurant.openingHours;
 console.log(sat);
 const { open, close } = sat;
 console.log(open, close);
+
+//--------------------------------------------------
+//Spread operator ...
+
+const arrSpread = [1, 2, 3, 4];
+console.log(arrSpread);
+
+const newArr = [...arrSpread, 5, 6];
+console.log(newArr);
+
+const newMainMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMainMenu);
+
+// Copy arrays
+const arrCopy = [...arrSpread];
+console.log(arrCopy);
+
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// Joining 2 or more arrays
+const fullMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(fullMenu);
+
+// ITERABLES: arrays, strings, maps, sets.  NOT  objects
+const str = 'Jonas';
+const letters = [...str];
+console.log(letters);
+// we can use spread operator for building arrays / passing values into a function
+
+//Real-word example
+
+// const ingredients = [
+//   prompt('Ingredient 1?'),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+// restaurant.recipe(...ingredients);
+
+//Objects
+const newRestaurant = { ...restaurant };
+console.log(newRestaurant);
+
+const newRestaurantAdd = {
+  ...restaurant,
+  foundedIN: 19998,
+  fondator: 'Giuseppe',
+};
+console.log(newRestaurantAdd);
