@@ -229,3 +229,31 @@ console.log(guestCorrect);
 
 //--------------------------------------------------------------------------------------------------
 // LOGICAL ASSIGNMENT OPERATORS
+
+const rest1 = {
+  name: 'Capri',
+  numGuest: 20,
+  //numGuest: 0
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR ASSIGNMENT OPERATOR
+// rest1.numGuest = rest1.numGuest || 10;
+// rest2.numGuest = rest2.numGuest || 10;
+
+rest1.numGuest ??= 10; // if .numGuest is not found then ---> 10
+rest2.numGuest ??= 10;
+
+// AND ASSIGNMENT OPERATOR
+//rest1.owner = rest1.owner && 'ANONYMOUS'
+//rest2.owner = rest2.owner && 'ANONUMOUS'
+
+rest1.owner &&= 'ANONYMOUS'; // if .owner is not found ---> undefined value returned
+rest2.owner &&= 'ANONYMOUS'; // if .owner is found -------> will be replaced with 'ANONYMOUS'
+
+console.log(rest1);
+console.log(rest2);
