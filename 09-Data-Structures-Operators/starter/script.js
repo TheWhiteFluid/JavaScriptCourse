@@ -49,6 +49,7 @@ const restaurant = {
   },
 };
 
+//calling object function
 restaurant.orderDelivery({
   starterIndex: 2,
   mainIndex: 2,
@@ -56,6 +57,7 @@ restaurant.orderDelivery({
   address: 'Via del Sole, 21',
 });
 
+// -------------------------------------------------------------------------------------------------
 // DESTRUCTURING ARRAYS  --> [ ] destructuring arrays sing :)
 const arr = [2, 3, 4];
 const a = arr[0];
@@ -91,8 +93,8 @@ const defaultArr = [7, 8, 9];
 const [p, l, m = 1] = [7, 8];
 console.log(p, l, m);
 
-//-----------------------------------------------------------------
-//DESTRUCTURING OBJECTS --> { } destructuring objects sign :)
+//---------------------------------------------------------------------------------------------
+//DESTRUCTURING OBJECTS --> { } destructuring objects sign
 // You have to specify in the {} the exact name of object properties that you wanna destruct
 
 const { name, openingHours, categories } = restaurant;
@@ -125,8 +127,8 @@ console.log(openHrs, closeHrs);
 //const { open, close } = sat;
 //console.log(open, close);
 
-//--------------------------------------------------
-//Spread operator ...
+//-----------------------------------------------------------------------------------------------
+//SPREAD OPERATOR ...
 
 const arrSpread = [1, 2, 3, 4];
 console.log(arrSpread);
@@ -174,8 +176,8 @@ const newRestaurantAdd = {
 };
 console.log(newRestaurantAdd);
 
-//-------------------------------------------------------------
-//Rest operator ( same as spread but this time will collect arguments into array/object)
+//---------------------------------------------------------------------------------------------
+//REST OPERATOR (same as spread but this time will collect arguments into array/object)
 
 const arrSpreadd = [1, , 2, ...[3, 4]]; // SPREAD because on the RIGHT side of =
 
@@ -199,4 +201,31 @@ add(2, 3);
 add(2, 6, 7, 8);
 
 const xx = [23, 7, 5];
-add(...xx); // spread ca sa impart elemenele din array ---> mai apoi se vor forma inapoi intr-un array prin rest inclus in functie
+add(...xx); // spread ca sa impart elemenele din array ---> mai apoi se vor forma inapoi un array prin operatorul rest care este inclus in functie
+
+//-------------------------------------------------------------------------------------------------
+//SHORT CIRCUITING OPERATORS [ ||(or) &&(and) ]
+
+// || OR operator
+const guest = restaurant.numGuest || 10; // because that restaurant property is not defined(value undefind falsy) --> OR operator will short circuiting and return first truthy value 10
+
+// && AND operator
+const guest2 = restaurant.numGuest || 10; // because that restaurant property is not defined(value undefind falsy) --> AND operator will short circuiting and return first falsy value 10
+
+//Practical example
+if (restaurant.recipe) {
+  restaurant.recipe('mushrooms', 'spinach'); // old way of doing it
+}
+
+restaurant.recipe && 'nothing to display here'; // searching for property and if .recipe not exists(undefined falsy value) --> will move on and will return the second part if is a truthy value
+
+restaurant.recipe && restaurant.recipe('mushrooms', 'spinach'); // searching for property and if .recipe exists(truthy value) --> will move on and will actually call the function in the second part
+
+// Nullish: null and undefined
+restaurant.numGuest = 10;
+const guestCorrect = restaurant.numGuest ?? 10;
+
+console.log(guestCorrect);
+
+//--------------------------------------------------------------------------------------------------
+// LOGICAL ASSIGNMENT OPERATORS
