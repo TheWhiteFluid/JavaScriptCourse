@@ -120,10 +120,10 @@ const {
 console.log(openHrs, closeHrs);
 
 // same thing but taked close by close :)
-const { sat } = restaurant.openingHours;
-console.log(sat);
-const { open, close } = sat;
-console.log(open, close);
+//let { sat } = restaurant.openingHours;
+//console.log(sat);
+//const { open, close } = sat;
+//console.log(open, close);
 
 //--------------------------------------------------
 //Spread operator ...
@@ -173,3 +173,30 @@ const newRestaurantAdd = {
   fondator: 'Giuseppe',
 };
 console.log(newRestaurantAdd);
+
+//-------------------------------------------------------------
+//Rest operator ( same as spread but this time will collect arguments into array/object)
+
+const arrSpreadd = [1, , 2, ...[3, 4]]; // SPREAD because on the RIGHT side of =
+
+const [aa, bb, ...others] = [1, 2, 3, 4, 5];
+console.log(aa, bb, others);
+
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+const add = function (...numbers) {
+  // aduna argumentele si formeaza un array
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+
+add(2, 6, 7, 8);
+
+const xx = [23, 7, 5];
+add(...xx); // spread ca sa impart elemenele din array ---> mai apoi se vor forma inapoi intr-un array prin rest inclus in functie
