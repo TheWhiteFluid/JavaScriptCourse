@@ -58,7 +58,7 @@ restaurant.orderDelivery({
 });
 
 // -------------------------------------------------------------------------------------------------
-// DESTRUCTURING ARRAYS  --> [ ] destructuring arrays sing :)
+// DESTRUCTURING ARRAYS  --> [ ] destructuring arrays sign :)
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -181,7 +181,7 @@ console.log(newRestaurantAdd);
 
 const arrSpreadd = [1, , 2, ...[3, 4]]; // SPREAD because on the RIGHT side of =
 
-const [aa, bb, ...others] = [1, 2, 3, 4, 5];
+const [aa, bb, ...others] = [1, 2, 3, 4, 5]; //REST because on the LEFT side of =
 console.log(aa, bb, others);
 
 const { sat, ...weekdays } = restaurant.openingHours;
