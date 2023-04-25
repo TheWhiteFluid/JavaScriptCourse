@@ -200,17 +200,17 @@ add(2, 3);
 
 add(2, 6, 7, 8);
 
-const xx = [23, 7, 5];
-add(...xx); // spread ca sa impart elemenele din array ---> mai apoi se vor forma inapoi un array prin operatorul rest care este inclus in functie
+const xx = [23, 7, 5, 4]; //line 196
+add(...xx); // spread ca sa despart elemenele din array ---> mai apoi se va forma suma prin intermediul functiei ce foloseste metoda rest (adunarea elementelor individuale)
 
 //-------------------------------------------------------------------------------------------------
 //SHORT CIRCUITING OPERATORS [ ||(or) &&(and) ]
 
 // || OR operator
-const guest = restaurant.numGuest || 10; // because that restaurant property is not defined(value undefind falsy) --> OR operator will short circuiting and return first truthy value 10
+const guest = restaurant.numGuest || 10; // because that restaurant property is not defined(value undefind falsy) --> OR operator will short circuiting and return first truthy value
 
 // && AND operator
-const guest2 = restaurant.numGuest || 10; // because that restaurant property is not defined(value undefind falsy) --> AND operator will short circuiting and return first falsy value 10
+const guest2 = restaurant.numGuest && 10; // because that restaurant property is not defined(value undefind falsy) --> AND operator will short circuiting and return first falsy value
 
 //Practical example
 if (restaurant.recipe) {
@@ -245,6 +245,10 @@ const rest2 = {
 // rest1.numGuest = rest1.numGuest || 10;
 // rest2.numGuest = rest2.numGuest || 10;
 
+// rest1.numGuest ||= 10; -->same thing but written using a logical assignment operator
+// rest2.numGuest ||= 10;
+
+// writting using the nullish logical assignment operator(in case of 0 which is theoretically a nullish value --> this value will not be dismissed in this case :p )
 rest1.numGuest ??= 10; // if .numGuest is not found then ---> 10
 rest2.numGuest ??= 10;
 
