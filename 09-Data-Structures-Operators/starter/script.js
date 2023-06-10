@@ -261,3 +261,89 @@ rest2.owner &&= 'ANONYMOUS'; // if .owner is found -------> will be replaced wit
 
 console.log(rest1);
 console.log(rest2);
+
+//-------------------------coding challenge1
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1.
+const [players1, players2] = game.players;
+
+//2.
+const [gk, ...fieldPlayers] = players1; // rest parametor to collect all the remaining players except first one which will be assumed by gk variable
+
+//3.
+const allPlayers = [...players1, ...players2]; // spread operator to concatenate a big array formed by players1&players2 small arrays
+
+//4.
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Periscic'];
+
+//5.
+//const { odds } = game;
+//const { team1, x, team2 } = odds;
+
+//const {odds: { team1, x: draw, team2 },} = game;
+
+const { team1, x: draw, team2 } = game.odds; //deconstracturing an object inside of an other object
+
+//6.
+
+const printGoals = function (...players) {
+  //rest to form an array despite of the number of the arguments
+  console.log(players);
+  console.log(`${players.length} goals were scored`);
+};
+
+printGoals('Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels');
+printGoals('Lewandowski', 'Gnarby');
+
+printGoals(...game.scored); // spread to spread players from scored array
+
+//7.
+team1 < team2 && console.log('Team1 is more likely to win');
+team1 > team2 && console.log('Team2 is more likely to win');
+
+//&&- AND operator because if the condition is satisfied will continue to display cl funtion (will return first falsy value --> cl)
+// ||- OR operator will return first true value so that means team1<team2 satisfied --> will no go further to return cl
+
+//--------------------------------------------------------------------------------------------------
+// LOOPING ARRAYS: The for-of Loop
