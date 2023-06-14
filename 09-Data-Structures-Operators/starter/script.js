@@ -347,3 +347,26 @@ team1 > team2 && console.log('Team2 is more likely to win');
 
 //--------------------------------------------------------------------------------------------------
 // LOOPING ARRAYS: The for-of Loop
+
+// OBJECT KEYS, VALUES AND ENTRIES
+
+//PROPERTY NAMES(KEYS)
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open for ${properties.length} days as follow: `;
+for (const day of properties) {
+  openStr += `${day},`;
+}
+console.log(openStr);
+
+//PROPERTY VALUES
+const propertiesValues = Object.values(openingHours);
+console.log(propertiesValues);
+
+let openHrsStr = `We are open for following hours`;
+for (const hour of propertiesValues) {
+  openHrsStr += `${hour}`;
+  console.log(hour);
+}
+console.log(openHrsStr);
