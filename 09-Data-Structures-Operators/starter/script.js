@@ -12,7 +12,7 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -21,13 +21,13 @@ const restaurant = {
     console.log(obj);
   } , */
 
-  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+  orderDelivery({ starterIndex, mainIndex, time, address }) {
     console.log(
       `Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered at ${address} at ${time}`
     );
   },
 
-  recipe: function (ingr1, ingr2, ingr3) {
+  recipe(ingr1, ingr2, ingr3) {
     console.log(
       `Here is your delicious pasta with the ingredients: ${ingr1}, ${ingr2},${ingr3}`
     );
@@ -347,3 +347,84 @@ team1 > team2 && console.log('Team2 is more likely to win');
 
 //--------------------------------------------------------------------------------------------------
 // LOOPING ARRAYS: The for-of Loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+//for (let i = 0; i < menu.length; i++) console.log(menu[i]);
+//instead we can use a for-of loop
+
+for (const item of menu) console.log(item);
+
+for (const item of menu.entries()) console.log(item);
+
+console.log(menu.entries()); // result will be an array iterator{}
+console.log(...menu.entries()); // spreading the array iterator
+
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+// smarter way
+console.log(
+  'smarter way using deconstruction of the array based on index/name'
+);
+for (const [index, element] of menu.entries()) {
+  console.log(`${index + 1}: ${element}`);
+}
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+//OPTIONAL CHAINING
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+for (const day of days) {
+  console.log(day);
+  const openHour = restaurant.openingHours[day]?.open || 'closed';
+  if (openHour === 'closed') {
+    console.log(`On ${day} we are ${openHour}`);
+  } else {
+    console.log(`On ${day} we open at ${openHour}`);
+  }
+}
+
+// if an opening hour is 0 the OR operator will not work (will return closed value even if an open hour(0) exists --> 0 nullish value so will return the first true value after that --> string 'closed'). In order to correct that, we have to use a nullish coalescing operator as ?? so 0 will be taken in consideration as a value
+console.log('----nullish coalescing operator(??) used for saturday :)');
+
+for (const day of days) {
+  const openHour = restaurant.openingHours[day]?.open ?? 'closed';
+  if (openHour === 'closed') {
+    console.log(`On ${day} we are ${openHour}`);
+  } else {
+    console.log(`On ${day} we open at ${openHour}`);
+  }
+}
+
+//OPTIONAL CHAINING ON METHODS (function inside of the object)
+
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+//OPTIONAL CHAINING ON ARRAYS
+
+const users = [
+  { name: 'Jonas', email: 'helloJ@email.com' },
+  { name: 'Stefan', email: 'helloS@email.com' },
+]; //ex of an array which containts objects
+
+console.log(users[0]?.email ?? 'User array empty');
+console.log(users[1]?.email ?? 'User array empty');
+console.log(users[2]?.email ?? 'User array empty');
+
+console.log('----older version (more code to write :P)');
+if (users.length > 0) {
+  for (const user of users) {
+    //console.log(user);
+    console.log(user.email);
+  }
+} else {
+  console.log('User array empty');
+}
+
+// LOOPING OBJECTS / OBJECT KEYS, VALUES AND ENTRIES
