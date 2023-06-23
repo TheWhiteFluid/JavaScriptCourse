@@ -351,22 +351,26 @@ team1 > team2 && console.log('Team2 is more likely to win');
 // OBJECT KEYS, VALUES AND ENTRIES
 
 //PROPERTY NAMES(KEYS)
-const properties = Object.keys(openingHours);
-console.log(properties);
+const propertiesKeys = Object.keys(openingHours);
+console.log(propertiesKeys); // array
 
-let openStr = `We are open for ${properties.length} days as follow: `;
-for (const day of properties) {
+let openStr = `We are open for ${propertiesKeys.length} days as follow: `;
+for (const day of propertiesKeys) {
   openStr += `${day},`;
 }
 console.log(openStr);
 
 //PROPERTY VALUES
-const propertiesValues = Object.values(openingHours);
+const propertiesValues = Object.values(openingHours); // array of objects
 console.log(propertiesValues);
-
-let openHrsStr = `We are open for following hours`;
-for (const hour of propertiesValues) {
-  openHrsStr += `${hour}`;
-  console.log(hour);
+for (const x of propertiesValues) {
+  console.log(x);
 }
-console.log(openHrsStr);
+
+// Entire object using ENTRIES
+const entries = Object.entries(openingHours); // all the entries of the object in a big array of arrays
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
