@@ -374,3 +374,77 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+
+//-------------------------coding challenge2
+
+const game1 = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1.
+const game1Entries = Object.entries(game1);
+console.log(game1Entries);
+
+const scoredEntries = Object.entries(game1.scored);
+console.log(scoredEntries);
+
+for (const [i, player] of scoredEntries) {
+  console.log(`Goal ${i}: ${player}`);
+}
+
+//2.
+const oddsValues = Object.values(game1.odds);
+console.log(oddsValues);
+
+let average = 0;
+for (const odd of oddsValues) {
+  average += odd;
+}
+average /= oddsValues.length;
+console.log(average);
+
+//3.
+const test11 = Object.entries(game1.odds);
+console.log(test11);
+
+for (const [team, odd] of Object.entries(game1.odds)) {
+  console.log(team, odd);
+}
+//de terminat
