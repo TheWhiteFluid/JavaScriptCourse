@@ -419,13 +419,14 @@ const game1 = {
 };
 
 //1.
-const game1Entries = Object.entries(game1);
-console.log(game1Entries);
 
 const scoredEntries = Object.entries(game1.scored);
-console.log(scoredEntries);
+console.log(scoredEntries); //object entries
 
-for (const [i, player] of scoredEntries) {
+const scoredEntriesArray = game1.scored.entries();
+console.log(scoredEntriesArray); // entries of the array (itterator)
+
+for (const [i, player] of Object.entries(game1.scored)) {
   console.log(`Goal ${i}: ${player}`);
 }
 
