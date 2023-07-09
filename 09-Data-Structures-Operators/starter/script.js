@@ -529,3 +529,49 @@ console.log(rest);
 console.log(rest.get(arrr));
 
 console.log('MAPS2: ITTERATION...............................................');
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'correct'],
+  [false, 'Try again!'],
+]);
+console.log(question);
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+// const answer = Number(prompt('What is your answer'));
+const answer = 3;
+
+if (answer == question.get('correct')) {
+  console.log(`Your answer is: ${question.get(true)}`);
+} else {
+  console.log(`Your answer is false. ${question.get(false)}`);
+}
+
+console.log(question.get(answer == question.get('correct')));
+//console.log(question.get(true/false));
+
+//Convert map into array
+console.log(question);
+console.log(...question);
+
+//maps have almost same methods as array except set/get
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());
+
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
