@@ -528,4 +528,4 @@ console.log(rest);
 
 console.log(rest.get(arrr));
 
-console.log('MAPS2...........................................................');
+console.log('MAPS2: ITTERATION...............................................');
