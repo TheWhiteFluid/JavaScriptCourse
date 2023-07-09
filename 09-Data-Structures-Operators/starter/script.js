@@ -453,3 +453,79 @@ for (const [team, odd] of Object.entries(game1.odds)) {
     console.log(`Odd of victory for ${game1[team]}: ${odd}`);
   }
 }
+
+//SETS
+console.log('SETS...................................................');
+
+const alphabet = new Set(['a', 'b', 'b', 'c', 'd', 'd', 'd', 'e']);
+console.log(alphabet);
+
+console.log(alphabet.size);
+
+alphabet.add('x');
+console.log(alphabet);
+
+alphabet.delete('x'); //alphabet.clear( )
+console.log(alphabet);
+
+console.log(alphabet.has('a'));
+console.log(alphabet.has('y'));
+
+for (const letter of alphabet) {
+  console.log(letter);
+}
+
+const staff = ['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef', 'Chef'];
+console.log(staff);
+
+const staffUniqueSet = new Set(staff);
+console.log(staffUniqueSet);
+
+const staffUniqueSetArray = [...new Set(staff)]; // [...staffUniqueSet]
+console.log(staffUniqueSetArray);
+
+console.log(
+  new Set(['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef', 'Chef']).size
+); // console.log(staffUniqueSet.size);
+
+const lettersOfName = new Set('WOLF');
+console.log(lettersOfName);
+console.log(lettersOfName.size);
+
+//MAPS
+console.log('MAPS1...........................................................');
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano'); // maps has also the capability to return own values fact that will help us to chain multiple maps
+
+rest.set(1, 'Firenze');
+console.log(rest.set(2, 'Lisbon Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('closed', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get('open'));
+
+const time = 21;
+console.log(rest.get(rest.get('closed') > time && rest.get('open') < time));
+
+console.log(rest.has('categories'));
+
+console.log(rest.size);
+rest.delete(2);
+console.log(rest);
+
+console.log(rest.size);
+
+const arrr = [1, 2];
+rest.set(arrr, 'Test');
+console.log(rest);
+
+console.log(rest.get(arrr));
+
+console.log('MAPS2...........................................................');
