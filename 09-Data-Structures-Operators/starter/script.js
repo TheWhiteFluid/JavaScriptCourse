@@ -447,8 +447,5 @@ console.log(test11);
 for (const [team, odd] of Object.entries(game1.odds)) {
   const teamStr = team === 'x' ? 'draw' : `victory ${game1[team]}`;
   console.log(team, odd);
-  console.log(`Odd of ${teamStr}: ${odd}`);
 }
-
-console.log('SETS------------------------------------------------------');
-//SETS
+//de terminat
