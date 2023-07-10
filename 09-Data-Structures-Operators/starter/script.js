@@ -449,3 +449,66 @@ for (const [team, odd] of Object.entries(game1.odds)) {
   console.log(team, odd);
 }
 //de terminat
+
+//STRINGS1
+console.log('Strings1.................................................');
+
+const airline = 'TAP air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+
+console.log('B737'[0]);
+console.log('B737'[1]);
+console.log('B737'[2]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+//string methods - slice
+
+console.log(airline.slice(1));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(0, airline.lastIndexOf(' ')));
+
+console.log(airline.slice(-2)); // last 2 letters
+console.log(airline.slice(0, -2)); // beggining till last 2 letters
+
+const checkMiddleSeat = function (seat) {
+  // B & E are middle seats
+  const seatSlice = seat.slice(-1);
+  console.log(seatSlice);
+
+  if (seatSlice >= 'B' && seatSlice <= 'E') {
+    console.log('Middle seats');
+  } else {
+    console.log('Margin seats');
+  }
+};
+
+checkMiddleSeat('11A');
+checkMiddleSeat('11B');
+checkMiddleSeat('11C');
+checkMiddleSeat('11D');
+checkMiddleSeat('11E');
+checkMiddleSeat('11F');
+
+//capitalization
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const passanger = 'jOnAS';
+const passangerLowerCase = passanger.toLowerCase();
+const passangerCorrect =
+  passangerLowerCase[0].toUpperCase() + passangerLowerCase.slice(1);
+
+console.log(passangerCorrect);
