@@ -684,8 +684,10 @@ checkMiddleSeat('11D');
 checkMiddleSeat('11E');
 checkMiddleSeat('11F');
 
-//capitalization
+//STRINGS2
+console.log('Strings2.................................................');
 
+//capitalization
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
 
@@ -740,3 +742,6 @@ if (plane2.startsWith('A') && plane2.endsWith('neo')) {
 } else {
   console.log('Not from Airbus family :(');
 }
+
+//STRINGS3
+console.log('Strings3.................................................');
