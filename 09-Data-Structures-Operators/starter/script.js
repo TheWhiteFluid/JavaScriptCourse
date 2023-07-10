@@ -575,3 +575,62 @@ console.log(question.values());
 console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+
+//Coding challange 3
+console.log('CODING CHALLANGE3........................................');
+
+const gameEvent = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow card'],
+  [69, 'Red card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow Card'],
+]);
+
+//1.
+console.log('1...............');
+
+const gameEventValues = gameEvent.values();
+
+const uniqueEvents = new Set(gameEventValues);
+console.log(uniqueEvents);
+
+const uniqueEventArray = [...uniqueEvents];
+console.log(uniqueEventArray);
+
+//2.
+console.log('2...............');
+
+gameEvent.delete(69);
+console.log(gameEvent);
+
+//3.
+console.log('3...............');
+//const printStr = 'An event happened, on average, on 9 minutes'; // game last 90 min
+
+const numberOfEvents = gameEvent.size;
+console.log(numberOfEvents); //10
+
+const lastEventTime = [...gameEvent.keys()].pop();
+console.log(lastEventTime);
+
+console.log(
+  `An event happened, on average, on ${lastEventTime / numberOfEvents} minutes`
+);
+
+//4.
+console.log('4...............');
+
+for (const [time, event] of gameEvent) {
+  const half = time <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`[${half} HALF]: ${time}: ${event}`);
+}
+
+//WORKING WITH STRINGS
+console.log('WORKING WITH STRINGS..........................................');
