@@ -695,3 +695,48 @@ const passangerCorrect =
   passangerLowerCase[0].toUpperCase() + passangerLowerCase.slice(1);
 
 console.log(passangerCorrect);
+
+//comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = 'Hello@Jonas.Io \n';
+
+const emailCompare = function (emailAdress) {
+  //const lowerEmail = emailAdress.toLowerCase()
+  //const trimmedEmail = emailAdress.trim()
+  const emailNormalized = emailAdress.toLowerCase().trim();
+  if (emailAdress === emailNormalized) {
+    console.log('Correct email');
+  } else {
+    console.log('Invalid email');
+  }
+};
+emailCompare('hello@jonas.io');
+emailCompare('Hello@Jonas.Io');
+
+//replacing
+const priceGB = '2188,97#';
+console.log(priceGB);
+
+const priceDollar = priceGB.replace('#', '$');
+console.log(priceDollar);
+
+const priceDollarCorrect = priceGB.replace('#', '$').replace(',', '.');
+console.log(priceDollarCorrect);
+
+const announcement =
+  ' All passangers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replaceAll(/door/g, 'gate')); // same thing using global replacement
+
+//booleans
+const plane2 = 'A320neo';
+console.log(plane2.includes('A320'));
+
+console.log(plane2.startsWith('A320'));
+
+if (plane2.startsWith('A') && plane2.endsWith('neo')) {
+  console.log('This plane is from Airbus neo family');
+} else {
+  console.log('Not from Airbus family :(');
+}
