@@ -445,11 +445,194 @@ const test11 = Object.entries(game1.odds);
 console.log(test11);
 
 for (const [team, odd] of Object.entries(game1.odds)) {
-  const teamStr = team === 'x' ? 'draw' : `victory ${game1[team]}`;
   console.log(team, odd);
+  if (team === 'x') {
+    console.log(`Odd of draw: (${odd})`);
+  } else {
+    console.log(`Odd of victory for ${game1[team]}: ${odd}`);
+  }
 }
-//de terminat
 
+//SETS
+console.log('SETS...................................................');
+
+const alphabet = new Set(['a', 'b', 'b', 'c', 'd', 'd', 'd', 'e']);
+console.log(alphabet);
+
+console.log(alphabet.size);
+
+alphabet.add('x');
+console.log(alphabet);
+
+alphabet.delete('x'); //alphabet.clear( )
+console.log(alphabet);
+
+console.log(alphabet.has('a'));
+console.log(alphabet.has('y'));
+
+for (const letter of alphabet) {
+  console.log(letter);
+}
+
+const staff = ['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef', 'Chef'];
+console.log(staff);
+
+const staffUniqueSet = new Set(staff);
+console.log(staffUniqueSet);
+
+const staffUniqueSetArray = [...new Set(staff)]; // [...staffUniqueSet]
+console.log(staffUniqueSetArray);
+
+console.log(
+  new Set(['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef', 'Chef']).size
+); // console.log(staffUniqueSet.size);
+
+const lettersOfName = new Set('WOLF');
+console.log(lettersOfName);
+console.log(lettersOfName.size);
+
+//MAPS
+console.log('MAPS1...........................................................');
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano'); // maps has also the capability to return own values fact that will help us to chain multiple maps
+
+rest.set(1, 'Firenze');
+console.log(rest.set(2, 'Lisbon Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('closed', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get('open'));
+
+const time = 21;
+console.log(rest.get(rest.get('closed') > time && rest.get('open') < time));
+
+console.log(rest.has('categories'));
+
+console.log(rest.size);
+rest.delete(2);
+console.log(rest);
+
+console.log(rest.size);
+
+const arrr = [1, 2];
+rest.set(arrr, 'Test');
+console.log(rest);
+
+console.log(rest.get(arrr));
+
+console.log('MAPS2: ITTERATION...............................................');
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'correct'],
+  [false, 'Try again!'],
+]);
+console.log(question);
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+// const answer = Number(prompt('What is your answer'));
+const answer = 3;
+
+if (answer == question.get('correct')) {
+  console.log(`Your answer is: ${question.get(true)}`);
+} else {
+  console.log(`Your answer is false. ${question.get(false)}`);
+}
+
+console.log(question.get(answer == question.get('correct')));
+//console.log(question.get(true/false));
+
+//Convert map into array
+console.log(question);
+console.log(...question);
+
+//maps have almost same methods as array except set/get
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());
+
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
+
+//Coding challange 3
+console.log('CODING CHALLANGE3........................................');
+
+const gameEvent = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow card'],
+  [69, 'Red card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow Card'],
+]);
+
+//1.
+console.log('1...............');
+
+const gameEventValues = gameEvent.values();
+
+const uniqueEvents = new Set(gameEventValues);
+console.log(uniqueEvents);
+
+const uniqueEventArray = [...uniqueEvents];
+console.log(uniqueEventArray);
+
+//2.
+console.log('2...............');
+
+gameEvent.delete(69);
+console.log(gameEvent);
+
+//3.
+console.log('3...............');
+//const printStr = 'An event happened, on average, on 9 minutes'; // game last 90 min
+
+const numberOfEvents = gameEvent.size;
+console.log(numberOfEvents); //10
+
+const lastEventTime = [...gameEvent.keys()].pop();
+console.log(lastEventTime);
+
+console.log(
+  `An event happened, on average, on ${lastEventTime / numberOfEvents} minutes`
+);
+
+//4.
+console.log('4...............');
+
+for (const [time, event] of gameEvent) {
+  const half = time <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`[${half} HALF]: ${time}: ${event}`);
+}
+
+//WORKING WITH STRINGS
+console.log('WORKING WITH STRINGS..........................................');
 //STRINGS1
 console.log('Strings1.................................................');
 
