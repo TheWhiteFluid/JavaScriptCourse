@@ -806,5 +806,5 @@ planesInLine(2);
 planesInLine(3);
 planesInLine(4);
 
-//Coding challange 3
+//Coding challange 4
 console.log('CODING CHALLANGE4........................................');
