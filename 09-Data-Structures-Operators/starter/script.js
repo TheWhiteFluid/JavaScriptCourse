@@ -745,3 +745,53 @@ if (plane2.startsWith('A') && plane2.endsWith('neo')) {
 
 //STRINGS3
 console.log('Strings3.................................................');
+
+//split & join
+console.log('a+very+nice+string');
+console.log('a+very+nice+string'.split('+'));
+
+console.log('Jonas Schemdtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schemdtmann'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const passanger2 = 'jessica ann smith davis';
+const passanger3 = 'alma carmela diane';
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  console.log(names);
+
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    // namesUpper.push(n.replace(n[0], n[0].toUpperCase()))
+  }
+  console.log(namesUpper);
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName(passanger2);
+capitalizeName(passanger3);
+
+// padding a string
+const message = 'Go to gate 23!';
+
+console.log(message.padStart(25, '+')); // will make a string to have desired length
+console.log(message.padStart(25, '+').padEnd(35, '+'));
+
+const maskCreditCard = function (digits) {
+  const nmbToStr = digits + ''; // number + str --> convert primitives to string
+  const lastDigits = nmbToStr.slice(-4);
+  console.log("Your's masked credit card number:");
+
+  const mask = lastDigits.padStart(nmbToStr.length, '*');
+  return mask;
+};
+
+console.log(maskCreditCard(212414214));
+console.log(maskCreditCard('1231543637'));
+
+//repeat
