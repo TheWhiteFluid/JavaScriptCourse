@@ -795,3 +795,16 @@ console.log(maskCreditCard(212414214));
 console.log(maskCreditCard('1231543637'));
 
 //repeat
+const message2 = 'Bad weather.. All departues delayed...';
+console.log(message2.repeat(4));
+
+const planesInLine = function (n) {
+  const str = `There are ${n} planes in line ${' plane'.repeat(n)}`;
+  console.log(str);
+};
+planesInLine(2);
+planesInLine(3);
+planesInLine(4);
+
+//Coding challange 3
+console.log('CODING CHALLANGE4........................................');
