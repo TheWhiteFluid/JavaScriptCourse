@@ -1,9 +1,5 @@
 'use strict';
 
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -544,6 +540,7 @@ const hoursMap = new Map(Object.entries(openingHours));
 console.log(hoursMap);
 
 console.log(question.get('question'));
+
 for (const [key, value] of question) {
   if (typeof key === 'number') {
     console.log(`Answer ${key}: ${value}`);
@@ -748,7 +745,7 @@ console.log('Strings3.................................................');
 
 //split & join
 console.log('a+very+nice+string');
-console.log('a+very+nice+string'.split('+'));
+console.log('a+very+nice+string'.split('+')); //SPLIT WILL ALSO TRANSFORM STRING INTO ARRAY SPLITTED BY THE DEFINIED CHARACTER/SYMBOL !!!
 
 console.log('Jonas Schemdtmann'.split(' '));
 
@@ -808,3 +805,56 @@ planesInLine(4);
 
 //Coding challange 4
 console.log('CODING CHALLANGE4........................................');
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const text = document.querySelector('textarea').value;
+
+//TEST DATA
+/* 
+underscore_case
+  first_name
+Some_Variable
+  calculate_AGE
+delayed_departure
+*/
+
+//TASK: convert variable written in underscore_case to camelCase
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLocaleLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    //console.log(output);
+
+    const outputPadded = output.padEnd(20);
+    const outputPaddedEmojiRepeat = `${outputPadded}${':)'.repeat(i + 1)}`;
+    console.log(outputPaddedEmojiRepeat);
+  }
+});
+
+//trim() get rid of empty space or a symbol
+//split(x) will using the specified symbol/charachter to split input into a array
+//join() will make element to join together with a given element/symbol
+//slice(x) will slice input given the index(begging/end)
+//replace(a,b) will replace element a from an element with element b
+//tolowercase().....
+//touppercase().....
+//element.repeat(x) will repeat element for x times
+//paddEnd(x) will give specified padding at the end of the input
+//paddStart(x) will give specified padding at the beggining of the input
+
+//STRING METHODS PRACTICE
+console.log('STRING METHODS PRACTICE..................................,');
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
