@@ -859,5 +859,19 @@ console.log('STRING METHODS PRACTICE..................................,');
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-  
-  const output = `${0}`
+const splicerUp = function (str) {
+  const slicedOutput = str.slice(0, 3).toUpperCase();
+  return slicedOutput;
+  //const output = sliced.replace(sliced[0], sliced[0].toUpperCase());
+  //return output;
+};
+
+for (const flight of flights.split('+')) {
+  console.log(flight);
+  const [departure, from, to, time] = flight.split(';');
+
+  const output = `${departure.replaceAll('_', ' ')} from ${splicerUp(
+    from
+  )} to ${splicerUp(to)} (${time.replace(':', 'h')})`;
+  console.log(output);
+}
