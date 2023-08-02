@@ -114,3 +114,6 @@ const book2 = function (flightNum, name) {
 // instead we will use call function which indicates where this have to point
 book2.call(euroWings, 339, 'Core');
 book2.call(lufthanse, 4226, 'Ravanneli');
+
+const flightDetails = [231421, 'Smith'];
+book2.call(euroWings, ...flightDetails);
