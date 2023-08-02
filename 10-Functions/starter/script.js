@@ -108,8 +108,10 @@ const book2 = function (flightNum, name) {
   this.bookings.push(`flight:${this.iataCode}${flightNum}, ${name}`);
 };
 
-// doesn't work because this pointer doen't know where to acctually point(object)
+//THE CALL() METHOD
+
 //book2(4226, 'Rava');
+// doesn't work because this pointer doen't know where to acctually point(object)
 
 // instead we will use call function which indicates where this have to point
 book2.call(euroWings, 339, 'Core');
@@ -117,3 +119,5 @@ book2.call(lufthanse, 4226, 'Ravanneli');
 
 const flightDetails = [231421, 'Smith'];
 book2.call(euroWings, ...flightDetails);
+
+//THE BIND() METHOD
