@@ -121,3 +121,53 @@ const flightDetails = [231421, 'Smith'];
 book2.call(euroWings, ...flightDetails);
 
 //THE BIND() METHOD
+const book2LW = book2.bind(lufthanse);
+const book2EW = book2.bind(euroWings);
+
+book2LW(23, 'Steven');
+book2EW(34, 'John');
+
+//case1: function definet out of the object (is not an object method)
+euroWings.planes = 300;
+const buyPlane = function () {
+  this.planes++;
+  console.log(this.planes);
+};
+
+console.log(euroWings);
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', buyPlane.bind(euroWings));
+
+//case2: function attribuited to the object (becomes an object method)
+lufthanse.planes = 400;
+lufthanse.buyPlane = function () {
+  this.planes++;
+  console.log(this.planes);
+};
+
+console.log(lufthanse);
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthanse.buyPlane.bind(lufthanse));
+
+//PARTIAL APPLICATION FOR BIND METHOD
+
+const addTax = (rate, value) => value + rate * value;
+console.log(addTax(0.1, 100));
+
+const addVAT = addTax.bind(null, 0.23); // VAT value settet to 23% (first argment represent this keyword(where function to point))
+console.log(addVAT(100));
+
+//rewriting the above code using returning a function inside of another function (recursive functions)
+const addTax2 = function (rate) {
+  return function (value) {
+    return value + rate * value;
+  };
+};
+
+const addVAT2 = addTax2(0.23);
+
+console.log(addVAT2(100));
