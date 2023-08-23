@@ -189,8 +189,35 @@ poll.registerNewAnswer = function () {
     this.answers[answer]++; //END shot circuiting (replacing if statement)
 
   console.log(this.answers);
+
+  this.displayResults();
+  this.displayResults('string');
 };
 
 document
   .querySelector('.poll')
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+poll.displayResults = function (type = 'array') {
+  //type can be string or array // prompt will genereate string type always
+  if (type === 'array') {
+    console.log(this.answers);
+  } else if (type === 'string') {
+    console.log(`Poll results are: ${this.answers.join(', ')}`);
+  } else {
+    console.log('Wrong input!');
+  }
+};
+
+const bonusTestData1 = {
+  answers: [5, 2, 3],
+};
+const bonusTestData2 = {
+  answers: [1, 5, 3, 9, 6, 1],
+};
+
+poll.displayResults.call(bonusTestData1);
+poll.displayResults.call(bonusTestData1, 'string');
+
+poll.displayResults.call(bonusTestData2);
+poll.displayResults.call(bonusTestData2, 'string');
