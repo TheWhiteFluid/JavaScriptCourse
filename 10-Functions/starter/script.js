@@ -171,3 +171,26 @@ const addTax2 = function (rate) {
 const addVAT2 = addTax2(0.23);
 
 console.log(addVAT2(100));
+
+//CODING CHALLANGE
+const poll = {
+  question: 'What is your favourite programming language?',
+  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+  answers: new Array(4).fill(0),
+};
+
+// adding registerNewAnswer method to the poll object
+poll.registerNewAnswer = function () {
+  const answer = Number(
+    prompt(`${this.question} \n ${this.options.join('\n')}`)
+  );
+  typeof answer === 'number' &&
+    answer < this.options.length &&
+    this.answers[answer]++; //END shot circuiting (replacing if statement)
+
+  console.log(this.answers);
+};
+
+document
+  .querySelector('.poll')
+  .addEventListener('click', poll.registerNewAnswer.bind(poll));
