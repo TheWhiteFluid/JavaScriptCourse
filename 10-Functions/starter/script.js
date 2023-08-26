@@ -222,8 +222,7 @@ poll.displayResults.call(bonusTestData1, 'string');
 poll.displayResults.call(bonusTestData2);
 poll.displayResults.call(bonusTestData2, 'string');
 
-//IFE (one time invoked function)
-
+//IFE (imediately invoked function)[one time running function]
 const willRunWheneverCall = function () {
   console.log('This will run whenever you call me :)');
 };
@@ -232,3 +231,48 @@ willRunWheneverCall();
 (function () {
   console.log('This will run once!');
 })();
+
+//CLOSURES !!!
+const secureBooking = function () {
+  let passenegerCount = 0;
+
+  return function () {
+    passenegerCount++;
+    console.log(`${passenegerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+//example 1
+let f; //variable outer the function
+const g = function () {
+  //function that will call other inside of it
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+g();
+f(); //closure
+
+//example 2
+const boardPassangers = function (n, wait) {
+  const perGrup = n / 3;
+
+  console.log(`We will start boarding in ${wait} seconds`);
+
+  setTimeout(function () {
+    console.log(`We are boarding now all ${n} passengers`);
+    console.log(`There are 3 groups, each contain ${perGrup} passengers`);
+  }, wait * 1000);
+};
+
+boardPassangers(180, 3);
+
+//Coding challange 2
