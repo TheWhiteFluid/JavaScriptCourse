@@ -275,4 +275,14 @@ const boardPassangers = function (n, wait) {
 
 boardPassangers(180, 3);
 
-//Coding challange 2
+//Coding challenge 2
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+
+  document.querySelector('body').addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
+//IFE function is called and const header will be gone after running it(run once)
+// however, we are still able to use header variable inside of the addEventListener function because of CLOSURE(function will always remeber all the variable from it's 'birth place'(IFE function)-->header)
