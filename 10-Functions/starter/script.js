@@ -221,3 +221,14 @@ poll.displayResults.call(bonusTestData1, 'string');
 
 poll.displayResults.call(bonusTestData2);
 poll.displayResults.call(bonusTestData2, 'string');
+
+//IFE (one time invoked function)
+
+const willRunWheneverCall = function () {
+  console.log('This will run whenever you call me :)');
+};
+willRunWheneverCall();
+
+(function () {
+  console.log('This will run once!');
+})();
