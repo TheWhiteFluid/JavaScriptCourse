@@ -71,11 +71,12 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+//const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+// ARRAY METHODS
 
-// SLICE METHOD (will not change the original array)
+// SLICE (will not change the original array)
 let arr = ['a', 'b', 'c', 'd', 'e'];
 console.log(arr);
 
@@ -86,4 +87,65 @@ console.log(arr.slice(2, 3)); // c
 console.log(arr.slice(-2)); // d e
 console.log(arr.slice(1, -2)); // b c
 
-// SPLICE METHOD (work as slice method but this will change the original array)
+// SPLICE (work as slice method but this will change the original array)
+console.log(arr.splice(-1));
+console.log(arr); // will cut elements from the initial array
+
+console.log(arr.splice(1, 2)); //second parameter represents nr.of deleted elem
+console.log(arr);
+
+// REVERSE
+let arr2 = ['a', 'b', 'c', 'd', 'e'];
+console.log(arr2.reverse());
+console.log(arr2); // will mutuate the initial array
+
+//CONCAT
+console.log(arr);
+console.log(arr2);
+const letters = arr.concat(arr2);
+console.log(letters);
+//or
+console.log([...arr, ...arr2]); //using SPREAD operator
+
+//JOIN
+console.log(letters.join('-')); //result will be always a string
+
+//AT (good for method chaining)
+const arr3 = [23, 11, 64];
+console.log(arr3[0]);
+console.log(arr3.at(0));
+
+console.log(arr3[arr3.length - 1]);
+console.log(arr3.at(-1));
+
+console.log('jonas'.at(0));
+console.log('jonas'.at(-1));
+
+// FOR EACH METHOD(array) different from FOR OF
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log('---- FOR OF ----');
+
+//for(const movement of movements) {
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement} at position ${i + 1}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)} from position ${i + 1}`);
+  }
+}
+
+console.log('---- FOR EACH ----'); //needs a callback function !!!
+
+movements.forEach(function (movement) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+});
+// 0: function(200)
+// 1: function(450)
+// 2: function(400)
+// ...
