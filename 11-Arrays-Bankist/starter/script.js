@@ -74,3 +74,16 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+// SLICE METHOD (will not change the original array)
+let arr = ['a', 'b', 'c', 'd', 'e'];
+console.log(arr);
+
+console.log(arr.slice(2)); // c d e
+console.log(arr.slice(2, 4)); // c d
+console.log(arr.slice(2, 3)); // c
+
+console.log(arr.slice(-2)); // d e
+console.log(arr.slice(1, -2)); // b c
+
+// SPLICE METHOD (work as slice method but this will change the original array)
