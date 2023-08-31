@@ -65,12 +65,6 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
-
 //const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
@@ -122,7 +116,6 @@ console.log('jonas'.at(0));
 console.log('jonas'.at(-1));
 
 // FOR EACH METHOD(array) different from FOR OF
-
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 console.log('---- FOR OF ----');
@@ -148,3 +141,23 @@ movements.forEach(function (movement, i, arr) {
 // 1: function(450)
 // 2: function(400)
 // ...
+
+// FOREACH MAP
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (key, value, map) {
+  console.log(`${key}: ${value}`);
+});
+
+//FOREACH SET
+const uniqueCurrencies = new Set(['USD', 'EUR', 'GBP']);
+console.log(uniqueCurrencies);
+
+uniqueCurrencies.forEach(function (value, _, set) {
+  console.log(`${value}: ${_}`);
+});
+//sets dont have keys, it have only values
