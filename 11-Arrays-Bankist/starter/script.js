@@ -4,37 +4,6 @@
 /////////////////////////////////////////////////
 // BANKIST APP
 
-// Data
-const account1 = {
-  owner: 'Jonas Schmedtmann',
-  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
-  interestRate: 1.2, // %
-  pin: 1111,
-};
-
-const account2 = {
-  owner: 'Jessica Davis',
-  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
-  interestRate: 1.5,
-  pin: 2222,
-};
-
-const account3 = {
-  owner: 'Steven Thomas Williams',
-  movements: [200, -200, 340, -300, -20, 50, 400, -460],
-  interestRate: 0.7,
-  pin: 3333,
-};
-
-const account4 = {
-  owner: 'Sarah Smith',
-  movements: [430, 1000, 700, 50, 90],
-  interestRate: 1,
-  pin: 4444,
-};
-
-const accounts = [account1, account2, account3, account4];
-
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -142,6 +111,7 @@ movements.forEach(function (movement, i, arr) {
 // 2: function(400)
 // ...
 
+<<<<<<< HEAD
 // FOREACH MAP
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -161,3 +131,120 @@ uniqueCurrencies.forEach(function (value, _, set) {
   console.log(`${value}: ${_}`);
 });
 //sets dont have keys, it have only values
+=======
+////////////////////////////////////
+///// BANKIST APP DEVELOPMENT PROCCESS
+//DATA
+const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: 'Jessica Davis',
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: 'Steven Thomas Williams',
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: 'Sarah Smith',
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const movementsContainer = document.querySelector('.movements');
+
+const accounts = [account1, account2, account3, account4];
+
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = ' '; //empty the html code from index(the default one) uwing 'innerHTML' method
+
+  movements.forEach(function (mov, i) {
+    console.log(`${i}: ${mov}`);
+
+    const movementType = mov > 0 ? 'deposit' : 'withdrawal';
+
+    // replacing inside of the html code using template literals
+    const html = `
+        <div class="movements__row">
+        <div class="movements__type movements__type--${movementType}">${
+      i + 1
+    } ${movementType}</div>
+        <div class="movements__value">${mov}€</div>
+        </div>
+      `;
+    // inserting modified html code back into the container using 'inserAdjacentHTML' method
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+
+displayMovements(account3.movements);
+
+//selected movements container
+/* const containerMovements = document.querySelector('.movements') */
+
+//APP CLASS FROM INDEX.HTML -> movements real time changes
+/* <div class="movements">
+        <div class="movements__row">
+          <div class="movements__type movements__type--deposit">2 deposit</div>
+          <div class="movements__date">3 days ago</div>
+          <div class="movements__value">4 000€</div>
+        </div>
+        <div class="movements__row">
+          <div class="movements__type movements__type--withdrawal">
+            1 withdrawal
+          </div>
+          <div class="movements__date">24/01/2037</div>
+          <div class="movements__value">-378€</div>
+        </div>
+      </div>
+  */
+
+//coding challange
+//data example:
+
+const arr11 = ['dog1', 3]; //cat
+const arr22 = ['dog2', 5];
+const arr33 = ['dog3', 2];
+const arr44 = ['dog4', 12]; //cat
+const arr55 = ['dog5', 7]; //cat
+
+const arr111 = ['dog6', 4];
+const arr222 = ['dog7', 1];
+const arr333 = ['dog8', 15];
+const arr444 = ['dog9', 8];
+const arr555 = ['dog10', 3];
+
+let dogsJulia = [arr11, arr22, arr33, arr44, arr55];
+let dogsKate = [arr111, arr222, arr333, arr444, arr555];
+
+const checkDogs = function (dogsJulia, dogsKate) {
+  const onlydogsJulia = dogsJulia.slice(1, 3);
+
+  const allDogs = [...onlydogsJulia, ...dogsKate];
+  console.log(allDogs);
+
+  allDogs.forEach(function (value, i, _) {
+    if (value.at(1) >= 3) {
+      console.log(
+        `Dog number ${i + 1} is an adult, and is ${value.at(1)} years old`
+      );
+    } else {
+      console.log(`Dog number ${i + 1} is still a puppy !`);
+    }
+  });
+};
+
+checkDogs(dogsJulia, dogsKate);
+>>>>>>> e57b9d25434bc0ffcd9e50dd3cfc43b08f593170
