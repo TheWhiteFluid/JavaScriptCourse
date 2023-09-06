@@ -233,3 +233,14 @@ const checkDogs = function (dogsJulia, dogsKate) {
 };
 
 checkDogs(dogsJulia, dogsKate);
+
+//DATA TRANSFORMATION METHODS
+
+// 1) MAP --> same as forEach(is using a callback function for each element of the array HOWEVER is more usefull because will create a NEW array with the mapped elements)
+
+// 2) FILTER --> same as MAP method HOWEVER this method will create a new array with the filtered values of the initial array
+
+// 3) REDUCE -- same as MAP method HOWEVER for this method we have to specify an accumulator(an element with rest of the elements will be summing up) afterwards this method will create a new array with a single element which represents the total sum of the values of the initial array :p
+
+//MAP METHOD
+console.log('------ MAP METHOD -------');
