@@ -111,7 +111,6 @@ movements.forEach(function (movement, i, arr) {
 // 2: function(400)
 // ...
 
-<<<<<<< HEAD
 // FOREACH MAP
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -131,7 +130,7 @@ uniqueCurrencies.forEach(function (value, _, set) {
   console.log(`${value}: ${_}`);
 });
 //sets dont have keys, it have only values
-=======
+
 ////////////////////////////////////
 ///// BANKIST APP DEVELOPMENT PROCCESS
 //DATA
@@ -212,8 +211,6 @@ displayMovements(account3.movements);
   */
 
 //coding challange
-//data example:
-
 const arr11 = ['dog1', 3]; //cat
 const arr22 = ['dog2', 5];
 const arr33 = ['dog3', 2];
@@ -245,7 +242,6 @@ const checkDogs = function (dogsJulia, dogsKate) {
     }
   });
 };
-
 checkDogs(dogsJulia, dogsKate);
 
 //DATA TRANSFORMATION METHODS
@@ -258,4 +254,3 @@ checkDogs(dogsJulia, dogsKate);
 
 //MAP METHOD
 console.log('------ MAP METHOD -------');
-
