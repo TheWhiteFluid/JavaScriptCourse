@@ -247,9 +247,6 @@ const checkDogs = function (dogsJulia, dogsKate) {
 };
 
 checkDogs(dogsJulia, dogsKate);
-<<<<<<< HEAD
->>>>>>> e57b9d25434bc0ffcd9e50dd3cfc43b08f593170
-=======
 
 //DATA TRANSFORMATION METHODS
 
@@ -261,4 +258,4 @@ checkDogs(dogsJulia, dogsKate);
 
 //MAP METHOD
 console.log('------ MAP METHOD -------');
->>>>>>> af6fa3ce2c5c6787551ce295aa9ce45996a764ae
+
