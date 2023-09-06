@@ -240,7 +240,7 @@ checkDogs(dogsJulia, dogsKate);
 
 // 2) FILTER --> same as MAP method HOWEVER this method will create a new array with the filtered values of the initial array
 
-// 3) REDUCE -- same as MAP method HOWEVER for this method we have to specify an accumulator(an element with rest of the elements will be summing up) afterwards this method will create a new array with a single element which represents the total sum of the values of the initial array :p
+// 3) REDUCE -- same as MAP method HOWEVER for this method we have to specify an accumulator(an element with rest of the elements will be summing up) afterwards this method will sum of the all elements of the array :p -- NO NEW ARRAY CREATED
 
 //MAP METHOD
 console.log('------ MAP METHOD -------');
