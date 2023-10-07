@@ -250,8 +250,7 @@ booker();
 
 //example 1
 let f; //variable outer the function
-const g = function () {
-  //function that will call other inside of it
+const g = function () { //function that will call other inside of it
   const a = 23;
   f = function () {
     console.log(a * 2);
@@ -272,7 +271,6 @@ const boardPassangers = function (n, wait) {
     console.log(`There are 3 groups, each contain ${perGrup} passengers`);
   }, wait * 1000);
 };
-
 boardPassangers(180, 3);
 
 //Coding challenge 2
